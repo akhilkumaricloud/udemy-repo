@@ -15,4 +15,5 @@ jobs:
     uses: akhilkumaricloud/terraform/.github/workflows/workflow.yml@main
     with:
       target_environment: ${{inputs.target_environment}}
+      runner_name: 'non-prod'
     secrets: inherit
