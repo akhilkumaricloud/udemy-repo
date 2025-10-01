@@ -1,0 +1,18 @@
+name: Build and Deploy Workflow
+
+on:
+  push:
+    branches:  
+      - main
+  workflow_dispatch:
+    inputs:
+      target_environment:
+        options:
+          - dev
+jobs:
+  deploy_workflow:
+    name: "deploy workflow"
+    uses: akhilkumaricloud/terraform/.github/workflows/workflow.yml@main
+    with:
+      target_environment: ${{inputs.target_environment}}
+    secrets: inherit
